@@ -81,12 +81,12 @@ async function showAntipode(lat, lng, originMap, destinationMap) {
     
     const airportData = await fetchGeographicData(lat, lng, ['AIRP']);
     if (airportData) {
-        L.marker([airportData.lat, airportData.lng], {icon: airportIcon}).addTo(originMap).bindPopup(`Closest airport: ${airportData.name}, ${Math.round(airportData.distance)} km away`);
+        L.marker([airportData.lat, airportData.lng], {icon: airportIcon}).addTo(originMap).bindPopup(`Nearest airport: ${airportData.name}, ${Math.round(airportData.distance)} km away`);
     }
 
     const antipodalAirportData = await fetchGeographicData(antipodalLat, antipodalLng, ['AIRP']);
     if (antipodalAirportData) {
-        L.marker([antipodalAirportData.lat, antipodalAirportData.lng], {icon: airportIcon}).addTo(destinationMap).bindPopup(`Closest airport: ${antipodalAirportData.name}, ${Math.round(antipodalAirportData.distance)} km away`);
+        L.marker([antipodalAirportData.lat, antipodalAirportData.lng], {icon: airportIcon}).addTo(destinationMap).bindPopup(`Nearest airport: ${antipodalAirportData.name}, ${Math.round(antipodalAirportData.distance)} km away`);
     }
 
     
